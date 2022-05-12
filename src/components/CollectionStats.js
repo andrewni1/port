@@ -7,6 +7,7 @@ export default class CollectionStats extends React.Component {
     name: "",
     address: "",
     discord_url: "",
+    primary_asset_contracts: [],
     traits: [],
     stats: [],
   }
@@ -27,7 +28,7 @@ export default class CollectionStats extends React.Component {
   }
 
   render() {
-    //console.log(this.state.discord_url)
+    //console.log(this.state.address)
     return (
         <div>
             {this.state.name}

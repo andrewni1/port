@@ -1,4 +1,22 @@
+body {
+    font-family: Lato, Helvetica, Arial, sans-serif;
+  }
+
+.card-container {
+    text-align: center;
+}
+
+.asset-card {
+    margin: 10px;
+}
+
 .asset_img_container {
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.asset-name {
+    font-size: .9rem;
 }

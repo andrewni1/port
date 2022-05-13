@@ -25,20 +25,20 @@ export default class RetrieveAssets extends React.Component {
     render() {
       console.log(this.state.assets)
       return (
-        <div>
-          <ul>
+        <div className="card-container">
           {
             this.state.assets
               .map(asset =>
-                <a href={'https://opensea.io/assets/' + asset.asset_contract.address + '/' + asset.token_id} target="_blank" rel="noreferrer">
-                  <img className="asset_img_container"
-                    src={asset.image_url}
-                    alt="asset_image"
-                  />
-                </a>
+                [
+                    <a className="asset-card" href={'https://opensea.io/assets/' + asset.asset_contract.address + '/' + asset.token_id} target="_blank" rel="noreferrer">
+                      <img className="asset_img_container"
+                        src={asset.image_url}
+                        alt="asset_image"
+                      />
+                    </a>
+                ]
               )
           }
-          </ul>
         </div>
       )
     }

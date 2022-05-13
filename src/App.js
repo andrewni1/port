@@ -12,7 +12,7 @@ function App() {
       <div>
         <Navbar />
       </div>
-      <Routes>
+      <Routes className="main">
         <Route path="/" element={<LandingPage />} />
         {/* <Route path="dock" element={<Dock />} />
         <Route path="portfolio" element={<Portfolio />} />

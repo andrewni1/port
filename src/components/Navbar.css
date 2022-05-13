@@ -31,7 +31,7 @@
   .nav-wrapper {
     margin: auto;
     text-align: center;
-    width: 70%;
+    width: 85%;
   } @media(max-width: 768px) {
       .nav-wrapper {
         width: 90%;
@@ -72,7 +72,7 @@
     display: inline-block;
     background-color: rgb(228, 228, 228);
     border-radius: 10px;
-    margin-left: 12px;
+    margin-left: 10px;
   }
   
   #navbar li a {
@@ -88,7 +88,7 @@
   }
   
   #navbar li:hover {
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(241, 239, 239);
     transition: all .5s ease;
     -webkit-transition: all .5s ease;
   }

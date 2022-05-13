@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react'
+import "./LandingPage.css"
 
-export default class LandingPage extends React.Component {
-    render() {
-        return (
-          <div>
+function LandingPage() {
+  return (
+    <div className='image-container'>
+      Image
+    </div>
+  )
+}
 
-          </div>
-        )
-      }
-} 
+export default LandingPage

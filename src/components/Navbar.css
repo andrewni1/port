@@ -92,6 +92,26 @@
     transition: all .5s ease;
     -webkit-transition: all .5s ease;
   }
+
+  #wallet {
+    background-color: rgb(228, 228, 228);
+    top: 2px;
+    font-size: 1em;
+    height: 40px;
+    letter-spacing: 1px;
+    margin: 0 12px;
+    padding: 0 2px;
+    position: relative;
+    border-radius: 10px;
+    width: 40px;
+  }
+
+  #wallet:hover {
+    background-color: rgb(241, 239, 239);
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    cursor: pointer;
+  }
   
   /*======================================================
                       Mobile Menu Menu Icon

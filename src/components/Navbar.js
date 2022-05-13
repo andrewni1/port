@@ -1,5 +1,6 @@
 import React from 'react'
 import './Navbar.css'
+import { IoMdWallet } from "react-icons/io";
 
 function Navbar() {
   return (
@@ -12,6 +13,7 @@ function Navbar() {
                 <li className='nav-text'><a href="portfolio">Portfolio</a></li>
                 <li className='nav-text'><a href="tokens">Tokens</a></li>
                 <li className='nav-text'><a href="nfts">NFTs</a></li>
+                <button className='nav-text' id='wallet'><a><IoMdWallet /></a></button>
             </ul>
         </div>
         <div class="menuIcon">

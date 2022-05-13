@@ -34,13 +34,15 @@ export default class RetrieveCollections extends React.Component {
             this.state.collections
               .map(collection =>
                 <ul key={collection.slug}>
-                  <img 
-                    src={collection.image_url}
-                    alt="collection_image"
-                  />
+                  <a href={'https://opensea.io/collection/' + collection.slug} target="_blank" rel="noreferrer">
+                    <img
+                      src={collection.image_url}
+                      alt="collection_image"
+                    />
+                  </a>
                   {collection.name} - 
-                  {collection.owned_asset_count}
-                  {/* {this.getCollectionFloor(collection.slug)} */}
+                  {collection.owned_asset_count} -
+                  {this.getCollectionFloor(collection.slug)}
                 </ul>
               )
           }

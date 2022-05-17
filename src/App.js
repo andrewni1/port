@@ -1,10 +1,8 @@
 import './App.css';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
-import CollectionStats from './components/CollectionStats';
-import RetrieveAssets from './components/RetrieveAssets';
-import RetrieveCollections from './components/RetrieveCollections';
+import NFTs from './components/NFTs';
 
 function App() {
   return (
@@ -17,7 +15,7 @@ function App() {
         {/* <Route path="dock" element={<Dock />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="tokens" element={<Tokens />} /> */}
-        <Route path="nfts" element={<RetrieveAssets />} />
+        <Route path="nfts" element={<NFTs />} />
       </Routes>
     </div>
   );

@@ -3,11 +3,19 @@ body {
   }
 
 .card-container {
-    text-align: center;
+    background-color: grey;
+    display: flex;
 }
 
 .asset-card {
-    margin: 10px;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card-contents {
+    background-color: white;
 }
 
 .asset_img_container {

@@ -43,31 +43,25 @@ export default class NFTs extends React.Component {
       // console.log(this.state.assets)
       return (
         <div className="card-container">
-          {
-            this.state.assets
-              .map(asset =>
-                [
-                      <div className="card-contents">
-                        <a className="asset-card" href={asset.permalink} target="_blank" rel="noreferrer">
-                          <img className="asset_img_container"
-                            src={asset.image_url}
-                            alt="asset_image"
-                          />
-                          <div>
-                            {asset.name}
-                          </div>
-                          <div>
-                            {asset.collection.name}
-                          </div>
-                          {/* <div className="words">
-                            {this.getCollectionFloor(asset.collection.slug)}
-                          </div> */}
-                        </a>
-                      </div>
-                ]
-              )
-            
+          {this.state.assets.map(asset => {
+            if (!asset.collection.name.includes('Unidentified contract'))
+            return (
+            <div className="card-contents">
+              <a className="asset-card" href={asset.permalink} target="_blank" rel="noreferrer">
+                <img className="asset_img_container"
+                  src={asset.image_url}
+                  alt="asset_image"
+                />
+                <div>{asset.name}</div>
+                <div>{asset.collection.name}</div>
+                {/* <div className="words">
+                  {this.getCollectionFloor(asset.collection.slug)}
+                </div> */}
+              </a>
+            </div>
+          )
           }
+          )}
         </div>
       )
     }

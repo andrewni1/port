@@ -1,8 +1,18 @@
-import React from 'react'
-import './Navbar.css'
+import React, { useState } from 'react'
 import { IoMdWallet } from "react-icons/io";
+import './Navbar.css'
 
 function Navbar() {
+  const [walletAddress, setWalletAddress] = useState(null);
+
+  const connectWallet = async () => { 
+    if (window.ethereum) {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        setWalletAddress(accounts[0]);
+    }
+    console.log(walletAddress)
+  }
+  
   return (
     <nav id="navbar">
         <div class="nav-wrapper">
@@ -13,7 +23,7 @@ function Navbar() {
                 <li className='nav-text'><a href="portfolio">Portfolio</a></li>
                 <li className='nav-text'><a href="tokens">Tokens</a></li>
                 <li className='nav-text'><a href="nfts">NFTs</a></li>
-                <button className='nav-text' id='wallet'><a><IoMdWallet /></a></button>
+                <button className='nav-text' id='wallet' onClick={connectWallet}><IoMdWallet /></button>
             </ul>
         </div>
         <div class="menuIcon">
@@ -31,4 +41,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar 

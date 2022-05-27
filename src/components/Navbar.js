@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IoMdWallet } from "react-icons/io";
 import './Navbar.css'
 
-function Navbar() {
+function Navbar(props) {
   const [walletAddress, setWalletAddress] = useState(null);
 
   const connectWallet = async () => { 
@@ -10,9 +10,10 @@ function Navbar() {
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         setWalletAddress(accounts[0]);
     }
-    console.log(walletAddress)
   }
   
+  props.func({walletAddress});
+
   return (
     <nav id="navbar">
         <div class="nav-wrapper">

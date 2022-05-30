@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { ethers } from "ethers";
 import axios from 'axios';
+import './Eth.css'
 
-
-function Ethereum() {
+function Eth() {
     const [assets, setAssets] = useState([]);
     const [walletAddress, setWalletAddress] = useState(null);
 
@@ -46,7 +46,7 @@ function Ethereum() {
 
     const options = {
         method: 'GET',
-        headers: {Accept: 'application/json', 'X-API-KEY': process.env.OS_API_KEY}
+        headers: {Accept: 'application/json', 'X-API-KEY': 'd164f34100f24f3bab3cc79302606609'}
     };
       
     useEffect(() => {
@@ -88,4 +88,4 @@ function Ethereum() {
     );
 }
 
-export default Ethereum
+export default Eth

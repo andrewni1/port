@@ -6,6 +6,7 @@ import LandingPage from './components/LandingPage';
 import NFTs from './components/NFTs';
 import NFTs2 from './components/NFTs2';
 import Tokens from './components/Tokens';
+import Ethereum from './components/Ethereum';
 
 function App() {
   const [walletAddress, setWalletAddress] = useState(null);
@@ -25,6 +26,7 @@ function App() {
         <Route path="tokens" element={<Tokens walletAddress={walletAddress} />} />
         <Route path="nfts2" element={<NFTs2 walletAddress={walletAddress} />} />
         <Route path="nfts" element={<NFTs />} />
+        <Route path="eth" element={<Ethereum />} />
       </Routes>
     </div>
   );

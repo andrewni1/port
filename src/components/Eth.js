@@ -5,6 +5,7 @@ import './Eth.css'
 
 function Eth() {
     const [assets, setAssets] = useState([]);
+    const [collections, setCollections] = useState([]);
     const [ethPrice, setEthPrice] = useState();
     const [walletAddress, setWalletAddress] = useState(null);
 
@@ -55,23 +56,34 @@ function Eth() {
         .then(res => {
             setAssets(res.data.assets);
         })
+        axios.get('https://api.opensea.io/api/v1/collections?asset_owner=' + walletAddress + '&offset=0&limit=300', options)
+        .then(res => {
+            setCollections(res.data);
+        })
         axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
         .then(res => {
             setEthPrice(res.data.ethereum.usd)
         })
     })
 
-    return (
-        <div>
+    if (data.address === "") {
+        return (
             <button onClick={btnhandler}>
                 Connect to wallet
             </button>
+        )
+    } else return (
+        <div>
             <div>
                 {walletAddress}
             </div>
             <div>
                 Eth {data.balance} -
                 USD value {data.balance * ethPrice}
+            </div>
+            <div>
+                Collections: {collections.length} -
+                Assets: {assets.length}
             </div>
             <div className="card-container">
                 {assets.map(asset => {
@@ -83,8 +95,9 @@ function Eth() {
                                 src={asset.image_url}
                                 alt="asset_image"
                             />
-                            <div>{asset.name}</div>
-                            <div>{asset.collection.name}</div>
+                            <div className='card-info'>
+                                {asset.name}
+                            </div>
                             </a>
                         </div>
                     )

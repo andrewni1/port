@@ -4,27 +4,40 @@ body {
 
 .card-container {
     background-color: grey;
+    /* padding-left: 10%; */
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    overflow-y: scroll;
+    width: 100%;
+    height: 780px;
 }
 
 .asset-card {
     background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    width: 12em;
 }
 
 .card-contents {
     background-color: white;
+    width: fit-content;
 }
 
 .asset_img_container {
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     border-radius: 20px;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.asset-name {
-    font-size: .9rem;
+.card-info {
+    font-size: .9em;
+    text-align: start;
+    padding: 5%;
 }

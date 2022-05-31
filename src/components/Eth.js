@@ -5,6 +5,7 @@ import './Eth.css'
 
 function Eth() {
     const [assets, setAssets] = useState([]);
+    const [ethPrice, setEthPrice] = useState();
     const [walletAddress, setWalletAddress] = useState(null);
 
     const [data, setdata] = useState({
@@ -54,6 +55,10 @@ function Eth() {
         .then(res => {
             setAssets(res.data.assets);
         })
+        axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
+        .then(res => {
+            setEthPrice(res.data.ethereum.usd)
+        })
     })
 
     return (
@@ -65,22 +70,23 @@ function Eth() {
                 {walletAddress}
             </div>
             <div>
-                {data.balance}
+                Eth {data.balance} -
+                USD value {data.balance * ethPrice}
             </div>
             <div className="card-container">
                 {assets.map(asset => {
                     if (!asset.collection.name.includes('Unidentified contract'))
                     return (
-                    <div className="card-contents">
-                        <a className="asset-card" href={asset.permalink} target="_blank" rel="noreferrer">
-                        <img className="asset_img_container"
-                            src={asset.image_url}
-                            alt="asset_image"
-                        />
-                        <div>{asset.name}</div>
-                        <div>{asset.collection.name}</div>
-                        </a>
-                    </div>
+                        <div className="card-contents">
+                            <a className="asset-card" href={asset.permalink} target="_blank" rel="noreferrer">
+                            <img className="asset_img_container"
+                                src={asset.image_url}
+                                alt="asset_image"
+                            />
+                            <div>{asset.name}</div>
+                            <div>{asset.collection.name}</div>
+                            </a>
+                        </div>
                     )
                 })}
             </div>

@@ -4,7 +4,7 @@ import "./LandingPage.css"
 function LandingPage() {
   return (
     <div className='image-container'>
-      Image
+      PORT
     </div>
   )
 }

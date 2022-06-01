@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { ethers } from "ethers";
 import axios from 'axios';
+import { BsFillBriefcaseFill, BsFillCollectionFill } from "react-icons/bs";
+import { IoIosPhotos } from "react-icons/io";
+import { FaEthereum } from "react-icons/fa";
 import './Eth.css'
 
 function Eth() {
@@ -88,9 +91,9 @@ function Eth() {
                 </div>
                 <div className="nfts-container-header">
                     <div className="nft-stats-container-1">
-                        <div className='stat-box'>VALUE: xxx</div>
-                        <div className='stat-box'>COLLECTIONS: {collections.length}</div>
-                        <div className='stat-box'>NFTS: {assets.length}</div>
+                        <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> VALUE: $000</div>
+                        <div className='stat-box'><BsFillCollectionFill className='stat-image'/> COLLECTIONS: {collections.length}</div>
+                        <div className='stat-box'><IoIosPhotos className='stat-image'/> NFTS: {assets.length}</div>
                     </div>
                     {/* <div className="nft-stats-container-2">
                         Collections | NFTs
@@ -108,6 +111,10 @@ function Eth() {
                                 />
                                 <div className='card-info'>
                                     {asset.name}
+                                    <div className='card-value'>
+                                        <div className='eth-val'><FaEthereum /> xxx</div>
+                                        <div className='dollar-val'>$xxx</div>
+                                    </div>
                                 </div>
                                 </a>
                             </div>

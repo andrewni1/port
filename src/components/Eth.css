@@ -1,21 +1,17 @@
 body {
-    font-family: Lato, Helvetica, Arial, sans-serif;
-  }
+    font-family: 'MSBee-Regular';
+    width: 60%;
+}
 
 .card-container {
-    background-color: grey;
-    /* padding-left: 10%; */
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    text-align: center;
     overflow-y: scroll;
-    width: 100%;
     height: 780px;
+    margin-top: 20px;
 }
 
 .asset-card {
-    background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
     padding: 15px;
@@ -25,8 +21,7 @@ body {
 }
 
 .card-contents {
-    background-color: white;
-    width: fit-content;
+    margin: 10px;
 }
 
 .asset_img_container {
@@ -37,7 +32,98 @@ body {
 }
 
 .card-info {
-    font-size: .9em;
+    font-size: 14px;
     text-align: start;
     padding: 5%;
+}
+
+.nfts-container {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+}
+
+.nfts-container-header {
+    display: flex;
+}
+
+.header-text {
+    display: flex;
+    padding-left: 20px;
+    padding-top: 18px;
+}
+
+.nfts-text {
+    font-size: 30px;
+    font-family: 'MSBee-Black';
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.wallet-address {
+    color: #ABABAB;
+    padding-left: 20px;
+    font-size: 18px;
+    font-family: 'MSBee-Bold';
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.nft-stats-container-1 {
+    display: flex;
+    width: 40%;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    height: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.stat-box {
+    padding: 12px;
+    text-align: start;
+    text-align: center;
+    font-family: 'MonoRegular';
+    border-radius: 6px;
+    background-color: #E5E5E5;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-size: 14px;
+    margin-right: 6%;
+}
+
+.nft-stats-container-2 {
+    width: 80%;
+    justify-content: end;
+}
+
+@font-face {
+    font-family: 'MonoMedium';
+    src: local('MonoMedium'), url(./fonts/MonoMedium.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'MonoRegular';
+    src: local('MonoRegular'), url(./fonts/MonoRegular.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'MSBee-Black';
+    src: local('MSBee-Black'), url(./fonts/MSBee-Black.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'MSBee-Bold';
+    src: local('MSBee-Bold'), url(./fonts/MSBee-Bold.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'MSBee-Regular';
+    src: local('MSBee-Regular'), url(./fonts/MSBee-Regular.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'MSBee-Thin';
+    src: local('MSBee-Thin'), url(./fonts/MSBee-Thin.woff2) format('woff2');
 }

@@ -77,31 +77,43 @@ function Eth() {
             <div>
                 {walletAddress}
             </div>
-            <div>
+            <div className="tokens-stats-container">
                 Eth {data.balance} -
-                USD value {data.balance * ethPrice}
+                USD value ${data.balance * ethPrice}
             </div>
-            <div>
-                Collections: {collections.length} -
-                Assets: {assets.length}
-            </div>
-            <div className="card-container">
-                {assets.map(asset => {
-                    if (!asset.collection.name.includes('Unidentified contract'))
-                    return (
-                        <div className="card-contents">
-                            <a className="asset-card" href={asset.permalink} target="_blank" rel="noreferrer">
-                            <img className="asset_img_container"
-                                src={asset.image_url}
-                                alt="asset_image"
-                            />
-                            <div className='card-info'>
-                                {asset.name}
+            <div className="nfts-container">
+                <div className='header-text'>
+                    <p className='nfts-text'>NFTS</p> 
+                    <p className='wallet-address'>{walletAddress}</p>
+                </div>
+                <div className="nfts-container-header">
+                    <div className="nft-stats-container-1">
+                        <div className='stat-box'>VALUE: xxx</div>
+                        <div className='stat-box'>COLLECTIONS: {collections.length}</div>
+                        <div className='stat-box'>NFTS: {assets.length}</div>
+                    </div>
+                    {/* <div className="nft-stats-container-2">
+                        Collections | NFTs
+                    </div> */}
+                </div>
+                <div className="card-container">
+                    {assets.map(asset => {
+                        if (!asset.collection.name.includes('Unidentified contract'))
+                        return (
+                            <div className="card-contents">
+                                <a className="asset-card" href={asset.permalink} target="_blank" rel="noreferrer">
+                                <img className="asset_img_container"
+                                    src={asset.image_url}
+                                    alt="asset_image"
+                                />
+                                <div className='card-info'>
+                                    {asset.name}
+                                </div>
+                                </a>
                             </div>
-                            </a>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
         </div>
     );

@@ -71,13 +71,6 @@ function Eth() {
         })
     })
 
-    // const fetchFloor = (slug) => {
-    //     axios.get('https://api.opensea.io/api/v1/collection/' + slug + '/stats', options)
-    //     .then(res => {
-    //         setTotalEthNft(totalEthNft + res.data.stats.floor_price)
-    //     })
-    // }
-
     const nftFilterAssets = () => {
         setNftFilter('assets')
     }
@@ -88,9 +81,12 @@ function Eth() {
 
     if (data.address === "") {
         return (
-            <button onClick={btnhandler}>
-                Connect to wallet
-            </button>
+            <div>
+                <button onClick={btnhandler}>
+                    Connect to wallet
+                </button>
+            </div>
+            
         )
     } else return (
         <div>
@@ -131,9 +127,10 @@ function Eth() {
                     {collections.map(collection => {
                         if (nftFilter === 'collections')
                         if (!collection.name.includes('Unidentified contract'))
-                        // fetchFloor(collection.slug)
+                        // setTotalEthNft(totalEthNft + (collection.stats.one_day_average_price + collection.stats.seven_day_average_price) / 2)
+                        // console.log(totalEthNft)
                         return (
-                            <div className='collection-contents'>
+                            <div className='card-contents'>
                                 <a className="asset-card" href={'https://opensea.io/collection/' + collection.slug} target="_blank" rel="noreferrer">
                                     <img className="asset_img_container"
                                         src={collection.image_url}
@@ -142,10 +139,10 @@ function Eth() {
                                     <div className='card-info'>
                                         {collection.name}
                                         <div>Quantity: {collection.owned_asset_count}</div>
-                                        <div>Floor: {collection.floor_price}</div>
+                                        <div className='eth-val'>Avg. Price:<FaEthereum />{Math.round(((collection.stats.one_day_average_price + collection.stats.seven_day_average_price) / 2) * 100) / 100}</div>
                                         <div className='card-value'>
-                                            <div className='eth-val'><FaEthereum /> xxx</div>
-                                            <div className='dollar-val'>$xxx</div>
+                                            <div className='eth-val'><FaEthereum /> {Math.round(((collection.stats.one_day_average_price + collection.stats.seven_day_average_price) / 2) * collection.owned_asset_count * 100) / 100}</div>
+                                            <div className='dollar-val'>${Math.round(((collection.stats.one_day_average_price + collection.stats.seven_day_average_price) / 2) * collection.owned_asset_count * ethPrice * 100) / 100}</div>
                                         </div>
                                     </div>
                                 </a>
@@ -164,10 +161,16 @@ function Eth() {
                                     />
                                     <div className='card-info'>
                                         {asset.name}
-                                        <div className='card-value'>
-                                            <div className='eth-val'><FaEthereum /> xxx</div>
-                                            <div className='dollar-val'>$xxx</div>
-                                        </div>
+                                        {collections.map(collection => {
+                                            if (!collection.name.includes('Unidentified contract'))
+                                            if (collection.slug === asset.collection.slug)
+                                            return (
+                                                <div className='card-value'>
+                                                    <div className='eth-val'><FaEthereum /> {Math.round(((collection.stats.one_day_average_price + collection.stats.seven_day_average_price) / 2) * 100) / 100}</div>
+                                                    <div className='dollar-val'>${Math.round(((collection.stats.one_day_average_price + collection.stats.seven_day_average_price) / 2) * ethPrice * 100) / 100}</div>
+                                                </div>
+                                            )
+                                        })}
                                     </div>
                                 </a>
                             </div>

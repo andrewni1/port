@@ -9,6 +9,7 @@ body {
     overflow-y: scroll;
     height: 780px;
     margin-top: 20px;
+    padding-left: 1%;
 }
 
 .asset-card {
@@ -56,6 +57,12 @@ body {
     color: #ABABAB;
 }
 
+.tokens-container {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+}
+
 .nfts-container {
     border-radius: 12px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -90,11 +97,10 @@ body {
 
 .nft-stats-container-1 {
     display: flex;
-    width: 40%;
+    width: 65%;
     padding-left: 20px;
     padding-bottom: 15px;
     padding-top: 15px;
-    height: 30px;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -103,8 +109,29 @@ body {
     padding: 12px;
     padding-left: 20px;
     padding-right: 20px;
-    text-align: start;
-    text-align: center;
+    font-family: 'MonoRegular';
+    border-radius: 6px;
+    background-color: #E5E5E5;
+    font-size: 14px;
+    margin-right: 6%;
+    display: flex;
+    align-items: center;
+}
+
+.stat-image {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.nft-stats-container-2 {
+    display: flex;
+    justify-content: end;
+    width: 30%;
+}
+
+.filter-container {
+    width: 30%;
+    padding: 4px;
     font-family: 'MonoRegular';
     border-radius: 6px;
     background-color: #E5E5E5;
@@ -116,15 +143,28 @@ body {
     align-items: center;
 }
 
-.stat-image {
-    font-size: 16px;
-    margin-right: 10px;
-    
+.filter-single {
+    width: 50%;
+    height: 16px;
+    padding: 12px;
 }
 
-.nft-stats-container-2 {
-    width: 80%;
-    justify-content: end;
+.filter-collection {
+    width: 50%;
+    height: 16px;
+    padding: 12px;
+}
+
+.filter-single:hover {
+    opacity: 0.5;
+    background-color:white;
+    cursor: pointer;
+}
+
+.filter-collection:hover {
+    opacity: 0.5;
+    background-color:white;
+    cursor: pointer;
 }
 
 @font-face {

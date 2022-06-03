@@ -12,12 +12,12 @@ function Eth() {
     const [collections, setCollections] = useState([]);
     const [ethPrice, setEthPrice] = useState();
     const [nftFilter, setNftFilter] = useState('assets')
-    // const [totalEthNft, setTotalEthNft] = useState(0);
     const [walletAddress, setWalletAddress] = useState(null);
     const [data, setData] = useState({
         address: "",
         balance: null
     });
+    let totalNftValue = 0;
 
     const btnhandler = () => {
         if (window.ethereum) {
@@ -55,6 +55,7 @@ function Eth() {
         .then(res => {
             setCollections(res.data);
         })
+        getTotalNftValue();
         axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
         .then(res => {
             setEthPrice(res.data.ethereum.usd)
@@ -77,6 +78,18 @@ function Eth() {
     const inputHandler = (e) => {
         setWalletAddress(e.target.value)
         console.log(e.target.value)
+    }
+
+    const getTotalNftValue = () => {
+        collections.forEach(collection => {
+            console.log(collection.stats.one_day_average_price)
+        })
+    }
+
+    if (collections.length !== 0) {
+        collections.map(collection => {
+            totalNftValue = totalNftValue + Math.round(((collection.stats.one_day_average_price + collection.stats.seven_day_average_price) * collection.owned_asset_count / 2) * 100) / 100;
+        })
     }
 
     if (data.address === "") {
@@ -123,7 +136,7 @@ function Eth() {
                 </div>
                 <div className="nfts-container-header">
                     <div className="nft-stats-container-1">
-                        <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> VALUE: $xxx</div>
+                        <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> VALUE: ${Math.round(totalNftValue * ethPrice * 100) / 100}</div>
                         <div className='stat-box'><BsFillCollectionFill className='stat-image'/> COLLECTIONS: {collections.length}</div>
                         <div className='stat-box'><IoIosPhotos className='stat-image'/> NFTS: {assets.length}</div>
                     </div>
@@ -138,8 +151,6 @@ function Eth() {
                     {collections.map(collection => {
                         if (nftFilter === 'collections')
                         if (!collection.name.includes('Unidentified contract'))
-                        // setTotalEthNft(totalEthNft + (collection.stats.one_day_average_price + collection.stats.seven_day_average_price) / 2)
-                        // console.log(totalEthNft)
                         return (
                             <div className='card-contents'>
                                 <a className="asset-card" href={'https://opensea.io/collection/' + collection.slug} target="_blank" rel="noreferrer">
@@ -156,7 +167,7 @@ function Eth() {
                                     <div className='card-info'>
                                         {collection.name}
                                         <div>Quantity: {collection.owned_asset_count}</div>
-                                        {(collection.stats.one_day_average_price !== 0 && collection.stats.seven_day_average_price !== 0)
+                                        {(collection.stats.one_day_average_price !== 0 && collection.stats.seven_day_average_price !== 0) 
                                             ? <div>
                                                 <div className='eth-val'>Avg. Price:<FaEthereum />{Math.round(((collection.stats.one_day_average_price + collection.stats.seven_day_average_price) / 2) * 100) / 100}</div>
                                                 <div className='card-value'>
@@ -165,6 +176,8 @@ function Eth() {
                                                 </div>
                                             </div>
                                             : <div>
+                                                {/* {setTotalNftValue(totalNftValue + collection.stats.thirty_day_average_price * collection.owned_asset_count)}
+                                                {console.log(totalNftValue)} */}
                                                 <div>Avg. Price:<FaEthereum />{Math.round(collection.stats.thirty_day_average_price * 100) / 100}</div>
                                                 <div className='card-value'>
                                                     <div className='eth-val'><FaEthereum /> {Math.round(collection.stats.thirty_day_average_price * collection.owned_asset_count * 100) / 100}</div>

@@ -61,6 +61,28 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 20px;
+    margin-bottom: 40px;
+}
+
+.token-list {
+    margin-top: 10px;
+    display: flex;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.token-container {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'MonoRegular';
+    border-radius: 6px;
+    background-color: #E5E5E5;
+    font-size: 14px;
+    margin-right: 6%;
+    display: flex;
+    align-items: center;
 }
 
 .nfts-container {

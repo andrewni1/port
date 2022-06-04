@@ -4,6 +4,7 @@ import axios from 'axios';
 import { BsFillBriefcaseFill, BsFillCollectionFill } from "react-icons/bs";
 import { IoIosPhotos } from "react-icons/io";
 import { FaCoins, FaEthereum } from "react-icons/fa";
+import { GiToken } from "react-icons/gi";
 import nftPlaceholder from './nft-placeholder.jpg'
 import './Eth.css'
 
@@ -86,9 +87,9 @@ function Eth() {
         })
     }
 
-    if (collections.length !== 0) {
+    if (collections.length !== 0 && data.address !== "") {
         collections.map(collection => {
-            totalNftValue = totalNftValue + Math.round(((collection.stats.one_day_average_price + collection.stats.seven_day_average_price) * collection.owned_asset_count / 2) * 100) / 100;
+            totalNftValue = totalNftValue + (((collection.stats.one_day_average_price + collection.stats.seven_day_average_price) * collection.owned_asset_count / 2) * 100) / 100;
         })
     }
 
@@ -112,6 +113,19 @@ function Eth() {
         )
     } else return (
         <div>
+            <div className='portfolio-container'>
+                <div className='header-text'>
+                    <p className='nfts-text'>PORTFOLIO</p> 
+                    <p className='wallet-address'>{walletAddress}</p>
+                </div>
+                <div className="nft-stats-container-1">
+                    <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> NET WORTH: ${Math.round(data.balance * ethPrice * 100) / 100 + Math.round(totalNftValue * ethPrice * 100) / 100}</div>
+                    <div className='stat-box'><FaCoins className='stat-image'/> TOKENS: ${Math.round(data.balance * ethPrice * 100) / 100}</div>
+                    <div className='stat-box'><GiToken className='stat-image'/> NFTS: ${Math.round(totalNftValue * ethPrice * 100) / 100} </div>
+                </div>
+            </div>
+
+
             <div className='tokens-container'>
                 <div className='header-text'>
                     <p className='nfts-text'>TOKENS</p> 
@@ -120,7 +134,7 @@ function Eth() {
                 <div className="nft-stats-container-1">
                     <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> VALUE: ${Math.round(data.balance * ethPrice * 100) / 100}</div>
                     <div className='stat-box'><FaCoins className='stat-image'/> TOKENS: 1</div>
-                    <div className='stat-box'><FaCoins className='stat-image'/> DOMINANT TOKEN: Ethereum </div>
+                    <div className='stat-box'><GiToken className='stat-image'/> DOMINANT TOKEN: Ethereum </div>
                 </div>
                 <div className='token-list'>
                     <div className='token-container'>
@@ -137,8 +151,8 @@ function Eth() {
                 <div className="nfts-container-header">
                     <div className="nft-stats-container-1">
                         <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> VALUE: ${Math.round(totalNftValue * ethPrice * 100) / 100}</div>
-                        <div className='stat-box'><BsFillCollectionFill className='stat-image'/> COLLECTIONS: {collections.length}</div>
                         <div className='stat-box'><IoIosPhotos className='stat-image'/> NFTS: {assets.length}</div>
+                        <div className='stat-box'><BsFillCollectionFill className='stat-image'/> COLLECTIONS: {collections.length}</div>
                     </div>
                     <div className="nft-stats-container-2">
                         <div className='filter-container'>

@@ -126,7 +126,7 @@ function Eth() {
                     <p className='wallet-address'>{walletAddress}</p>
                 </div>
                 <div className="nft-stats-container-1">
-                    <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> NET WORTH: ${Math.round(Math.round(data.balance * ethPrice) + Math.round(totalNftValue * ethPrice) * 100) / 100}</div>
+                    <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> NET WORTH: ${(Math.round(data.balance * ethPrice * 100) / 100) + (Math.round(totalNftValue * ethPrice * 100) / 100)}</div>
                     <div className='stat-box'><FaCoins className='stat-image'/> TOKENS: ${Math.round(data.balance * ethPrice * 100) / 100}</div>
                     <div className='stat-box'><GiToken className='stat-image'/> NFTS: ${Math.round(totalNftValue * ethPrice * 100) / 100} </div>
                 </div>
@@ -197,8 +197,6 @@ function Eth() {
                                                 </div>
                                             </div>
                                             : <div>
-                                                {/* {setTotalNftValue(totalNftValue + collection.stats.thirty_day_average_price * collection.owned_asset_count)}
-                                                {console.log(totalNftValue)} */}
                                                 <div>Avg. Price:<FaEthereum />{Math.round(collection.stats.thirty_day_average_price * 100) / 100}</div>
                                                 <div className='card-value'>
                                                     <div className='eth-val'><FaEthereum /> {Math.round(collection.stats.thirty_day_average_price * collection.owned_asset_count * 100) / 100}</div>

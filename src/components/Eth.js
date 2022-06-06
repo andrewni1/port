@@ -3,8 +3,9 @@ import { ethers } from "ethers";
 import axios from 'axios';
 import { BsFillBriefcaseFill, BsFillCollectionFill } from "react-icons/bs";
 import { IoIosPhotos } from "react-icons/io";
-import { FaCoins, FaEthereum } from "react-icons/fa";
+import { FaCoins, FaEthereum, FaSearch } from "react-icons/fa";
 import { GiToken } from "react-icons/gi";
+import metamask from './metamask.png'
 import nftPlaceholder from './nft-placeholder.jpg'
 import './Eth.css'
 
@@ -78,7 +79,10 @@ function Eth() {
 
     const inputHandler = (e) => {
         setWalletAddress(e.target.value)
-        console.log(e.target.value)
+    }
+
+    const searchWallet = () => {
+        accountChangeHandler(walletAddress)
     }
 
     const getTotalNftValue = () => {
@@ -95,19 +99,22 @@ function Eth() {
 
     if (data.address === "") {
         return (
-            <div>
-                <img src={nftPlaceholder} alt='nothing'/>
-                <button onClick={btnhandler}>
-                    Connect to wallet
-                </button>
-                <div>
-                    <input
-                        type="text"
-                        onChange={inputHandler}
-                        placeholder="Wallet Address"
-                        value={walletAddress}
-                    />
-                    {/* <button onClick={accountChangeHandler(walletAddress)}>Search</button> */}
+            <div className='lookup-page'>
+                <div className='wallet-container'>
+                    <div className='metamask-section' onClick={btnhandler}>
+                        <img src={metamask} alt='metamask' className='metamask-img'/>
+                        <div>Connect with Metamask</div>
+                    </div>
+                    <div className='search-section'>
+                        <input
+                            type="text"
+                            onChange={inputHandler}
+                            placeholder="Wallet Address"
+                            value={walletAddress}
+                            className="search-box"
+                        />
+                        <button onClick={searchWallet}><FaSearch /></button>
+                    </div>
                 </div>
             </div>
         )
@@ -119,7 +126,7 @@ function Eth() {
                     <p className='wallet-address'>{walletAddress}</p>
                 </div>
                 <div className="nft-stats-container-1">
-                    <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> NET WORTH: ${Math.round(data.balance * ethPrice * 100) / 100 + Math.round(totalNftValue * ethPrice * 100) / 100}</div>
+                    <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> NET WORTH: ${Math.round(Math.round(data.balance * ethPrice) + Math.round(totalNftValue * ethPrice) * 100) / 100}</div>
                     <div className='stat-box'><FaCoins className='stat-image'/> TOKENS: ${Math.round(data.balance * ethPrice * 100) / 100}</div>
                     <div className='stat-box'><GiToken className='stat-image'/> NFTS: ${Math.round(totalNftValue * ethPrice * 100) / 100} </div>
                 </div>

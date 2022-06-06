@@ -3,6 +3,53 @@ body {
     width: 60%;
 }
 
+.lookup-page {
+    padding: 30%;
+}
+
+.wallet-container {
+    background-color: #ABABAB;
+    border-radius: 10px;
+    padding: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 80%;
+}
+
+.metamask-section {
+    padding: 8px;
+    font-family: 'MSBee-Bold';
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.metamask-section:hover {
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.metamask-img {
+    height: 80px;
+    width: 80px;
+}
+
+.search-section {
+    padding: 8px;
+
+}
+
+.search-section:hover {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.search-box {
+    font-size: 14px;
+    font-family: 'MSBee-Regular';
+    padding: 10px;
+    border-radius: 4px;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -74,7 +121,6 @@ body {
 
 .token-list {
     margin-top: 10px;
-    display: flex;
     padding-left: 20px;
     display: flex;
     align-items: center;

@@ -9,7 +9,7 @@ function LandingPage() {
       <div className='text-container'>
         <div className='header'>Port</div>
         <div className='sub-header'>Visualise your Web3 portfolio valuation</div>
-        <div className='description'>Connect a Metamask wallet or search a valid ethereum address to display the total value of ERC-20 tokens and NFTs in the wallet</div>
+        <div className='description'>Connect a Metamask wallet or search a valid ethereum address to display the total value of all ERC-20 tokens and NFTs in the wallet</div>
         <div className='button'>
           <a href="/eth" className='eth'><FaEthereum /> Ethereum</a>
         </div>

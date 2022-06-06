@@ -6,10 +6,17 @@ body {
     justify-content: space-between;
     display: flex;
     align-items: center;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 }
 
 .text-container {
-    width: 70%;
+    width: 65%;
     text-align: start;
 }
 
@@ -22,6 +29,8 @@ body {
     font-size: 50px;
     font-family: 'MSBee-Regular';
     font-style: bold;
+    line-height: 90%;
+    margin-bottom: 2px;
 }
 
 .description {
@@ -47,9 +56,14 @@ body {
     width: fit-content;
 }
 
+.eth:hover {
+    background-color: rgb(236, 236, 236);
+    transition: 0.3s;
+}
+
 .port-img {
-    width: 30%;
-    height: 30%;
+    width: 35%;
+    height: 35%;
 }
 
 @font-face {

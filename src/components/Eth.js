@@ -126,7 +126,7 @@ function Eth() {
         <div>
             <div className='portfolio-container'>
                 <div className='header-text'>
-                    <p className='nfts-text'>PORTFOLIO</p> 
+                    <p className='nfts-text'>PORTFOLIO</p>
                     <p className='wallet-address'>{walletAddress}</p>
                 </div>
                 <div className="nft-stats-container-1">
@@ -135,8 +135,6 @@ function Eth() {
                     <div className='stat-box'><IoIosPhotos className='stat-image'/> NFTS: ${Math.round(totalNftValue * ethPrice * 100) / 100} </div>
                 </div>
             </div>
-
-
             <div className='tokens-container'>
                 <div className='header-text'>
                     <p className='nfts-text'>TOKENS</p> 

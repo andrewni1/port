@@ -253,6 +253,7 @@ body {
     width: 50%;
     height: 16px;
     padding: 12px;
+    margin-right: 4px;
 }
 
 .filter-single-on {
@@ -260,7 +261,9 @@ body {
     height: 16px;
     padding: 12px;
     background-color:white;
-    border-radius: 6px;   
+    border-radius: 6px;
+    margin-right: 4px;
+    cursor: pointer;
 }
 
 .filter-collection {
@@ -275,6 +278,7 @@ body {
     padding: 12px;
     background-color:white;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .filter-single:hover {

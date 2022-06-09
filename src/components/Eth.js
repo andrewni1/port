@@ -113,7 +113,7 @@ function Eth() {
                             value={walletAddress}
                             className="search-box"
                         />
-                        <button onClick={searchWallet}><FaSearch /></button>
+                        <button onClick={searchWallet} className='search-icon'><FaSearch /></button>
                     </div>
                 </div>
             </div>
@@ -162,10 +162,16 @@ function Eth() {
                         <div className='stat-box'><BsFillCollectionFill className='stat-image'/> COLLECTIONS: {collections.length}</div>
                     </div>
                     <div className="nft-stats-container-2">
-                        <div className='filter-container'>
-                            <IoIosPhotos className='filter-single' onClick={nftFilterAssets}/> 
-                            <BsFillCollectionFill className='filter-collection' onClick={nftFilterCollections}/>
-                        </div>
+                        {nftFilter === 'assets'
+                            ? <div className='filter-container'>
+                                <IoIosPhotos className='filter-single-on' onClick={nftFilterAssets}/> 
+                                <BsFillCollectionFill className='filter-collection' onClick={nftFilterCollections}/>
+                            </div>
+                            : <div className='filter-container'>
+                                <IoIosPhotos className='filter-single' onClick={nftFilterAssets}/> 
+                                <BsFillCollectionFill className='filter-collection-on' onClick={nftFilterCollections}/>
+                            </div>
+                        }
                     </div>
                 </div>
                 <div className="card-container" >

@@ -44,11 +44,38 @@ body {
     transition: 0.3s;
 }
 
+.search-section:hover .search-box {
+    background-color: white;
+    transition: 0.3s;
+}
+
+.search-section:hover .search-icon {
+    background-color: white;
+    transition: 0.3s;
+}
+
 .search-box {
     font-size: 14px;
     font-family: 'MSBee-Regular';
     padding: 10px;
     border-radius: 4px;
+    background-color: #E5E5E5;
+    border: none;
+}
+
+.search-box:focus {
+    outline: none;
+}
+
+.search-icon {
+    font-size: 14px;
+    padding: 10px;
+    background-color: #E5E5E5;
+    border: none;
+}
+
+.search-icon:hover {
+    cursor: pointer;
 }
 
 .card-container {
@@ -214,15 +241,12 @@ body {
 .filter-container {
     width: 30%;
     padding: 4px;
-    font-family: 'MonoRegular';
     border-radius: 6px;
     background-color: #E5E5E5;
     margin-bottom: auto;
     margin-top: auto;
-    font-size: 14px;
     margin-right: 6%;
     display: flex;
-    align-items: center;
 }
 
 .filter-single {
@@ -231,22 +255,40 @@ body {
     padding: 12px;
 }
 
+.filter-single-on {
+    width: 50%;
+    height: 16px;
+    padding: 12px;
+    background-color:white;
+    border-radius: 6px;   
+}
+
 .filter-collection {
     width: 50%;
     height: 16px;
     padding: 12px;
 }
 
-.filter-single:hover {
-    opacity: 0.5;
+.filter-collection-on {
+    width: 50%;
+    height: 16px;
+    padding: 12px;
     background-color:white;
+    border-radius: 6px;
+}
+
+.filter-single:hover {
+    background-color:white;
+    transition: 0.3s;
     cursor: pointer;
+    border-radius: 6px;
 }
 
 .filter-collection:hover {
-    opacity: 0.5;
     background-color:white;
+    transition: 0.3s;
     cursor: pointer;
+    border-radius: 6px;
 }
 
 @font-face {

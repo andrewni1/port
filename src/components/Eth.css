@@ -291,6 +291,151 @@ body {
     border-radius: 6px;
 }
 
+/* Responsiveness */
+
+@media (max-width: 914px) {
+    .header-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wallet-address {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .stat-box {
+        margin-bottom: 8px;
+        margin-right: 36px;
+    }
+
+    /* ----- Portfolio Section ----- */
+    .portfolio-container {
+        padding: 6px;
+    }
+
+    /* ----- Token Section ----- */
+    .tokens-container {
+        padding: 6px;
+        padding-bottom: 20px;
+    }
+    
+    .token-list {
+        margin-top: 0px;
+    }
+    
+    /* ----- NFT Section ----- */
+    .filter-container {
+        margin-left: 20px;
+    }
+
+    .nfts-container {
+        padding: 6px;
+    }
+
+    .nft-stats-container-1 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .nft-stats-container-2 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 50px;
+    }
+
+    .filter-container {
+        position: absolute;
+    }
+}
+
+@media (max-width: 1290px) {
+    .wallet-address {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        padding-right: 16px;
+    }
+
+    /* ----- NFT Section ----- */
+    .nfts-container-header {
+        display: inline;
+    }
+
+    .filter-container {
+        margin-left: 20px;
+    }
+
+    .nft-stats-container-2 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 50px;
+    }
+
+    .filter-container {
+        position: absolute;
+    }
+}
+
+@media (max-width: 1510px) {
+    /* ----- NFT Section ----- */
+    .nft-stats-container-1 {
+        display: flex;
+        width: 60%;
+        padding-left: 20px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .nft-stats-container-2 {
+        width: 40%;
+        justify-content: start;
+    }
+
+    .filter-container {
+        height: 53px;
+    }
+
+    .filter-single {
+        padding: 18px;
+    }
+
+    .filter-single-on {
+        padding: 18px;
+    }
+
+    .filter-collection {
+        padding: 18px;
+    }
+
+    .filter-collection-on {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 1740px) {
+    /* ----- NFT Section ----- */
+    .nft-stats-container-1 {
+        display: flex;
+        width: 100%;
+        padding-left: 20px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .filter-container {
+        width: 50%;
+    }
+}
+
+/* ----- Fonts ----- */
 @font-face {
     font-family: 'MonoMedium';
     src: local('MonoMedium'), url(./fonts/MonoMedium.woff2) format('woff2');

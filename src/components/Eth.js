@@ -82,7 +82,11 @@ function Eth() {
     }
 
     const searchWallet = () => {
-        accountChangeHandler(walletAddress)
+        if (walletAddress.length === 42 && walletAddress.indexOf('0x') === 0) {
+            accountChangeHandler(walletAddress)
+        } else {
+            alert('Enter a valid address')
+        }
     }
 
     const getTotalNftValue = () => {
@@ -128,7 +132,7 @@ function Eth() {
                 <div className="nft-stats-container-1">
                     <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> NET WORTH: ${(Math.round(data.balance * ethPrice * 100) / 100) + (Math.round(totalNftValue * ethPrice * 100) / 100)}</div>
                     <div className='stat-box'><FaCoins className='stat-image'/> TOKENS: ${Math.round(data.balance * ethPrice * 100) / 100}</div>
-                    <div className='stat-box'><GiToken className='stat-image'/> NFTS: ${Math.round(totalNftValue * ethPrice * 100) / 100} </div>
+                    <div className='stat-box'><IoIosPhotos className='stat-image'/> NFTS: ${Math.round(totalNftValue * ethPrice * 100) / 100} </div>
                 </div>
             </div>
 
@@ -136,7 +140,6 @@ function Eth() {
             <div className='tokens-container'>
                 <div className='header-text'>
                     <p className='nfts-text'>TOKENS</p> 
-                    <p className='wallet-address'>{walletAddress}</p>
                 </div>
                 <div className="nft-stats-container-1">
                     <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> VALUE: ${Math.round(data.balance * ethPrice * 100) / 100}</div>
@@ -153,7 +156,6 @@ function Eth() {
             <div className="nfts-container">
                 <div className='header-text'>
                     <p className='nfts-text'>NFTS</p> 
-                    <p className='wallet-address'>{walletAddress}</p>
                 </div>
                 <div className="nfts-container-header">
                     <div className="nft-stats-container-1">

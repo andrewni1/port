@@ -3,17 +3,19 @@ import { ethers } from "ethers";
 import axios from 'axios';
 import { BsFillBriefcaseFill, BsFillCollectionFill } from "react-icons/bs";
 import { IoIosPhotos } from "react-icons/io";
-import { FaCoins, FaEthereum, FaSearch } from "react-icons/fa";
+import { FaCoins, FaEthereum, FaSearch, FaSignOutAlt } from "react-icons/fa";
 import { GiToken } from "react-icons/gi";
 import metamask from './metamask.png'
 import nftPlaceholder from './nft-placeholder.jpg'
+import os from './os.png'
 import './Eth.css'
 
 function Eth() {
     const [assets, setAssets] = useState([]);
     const [collections, setCollections] = useState([]);
     const [ethPrice, setEthPrice] = useState();
-    const [nftFilter, setNftFilter] = useState('assets')
+    const [nftFilter, setNftFilter] = useState('assets');
+    const [OSLink, setOSLink] = useState();
     const [walletAddress, setWalletAddress] = useState(null);
     const [data, setData] = useState({
         address: "",
@@ -48,6 +50,7 @@ function Eth() {
         setWalletAddress(account);
         setData({ address: account });
         getBalance(account);
+        setOSLink('https://opensea.io/' + account)
 
         axios.get('https://api.opensea.io/api/v1/assets?owner=' + account + '&order_direction=desc&limit=200&include_orders=false', options)
         .then(res => {
@@ -124,13 +127,20 @@ function Eth() {
         )
     } else return (
         <div>
+            <div className='eth-navbar'>
+                <div><a href='./' className='nav-text'>Port</a></div>
+                <div className='navbar-contents'>
+                    <div className='nav-icon-container'><a href={OSLink} target='_blank' rel="noreferrer"><img src={os} alt='opensea' className='nav-icon'/></a></div>
+                    <div className='nav-icon-container'><a href='/eth'><FaSignOutAlt className='nav-icon'/></a></div>
+                </div>
+            </div>
             <div className='portfolio-container'>
                 <div className='header-text'>
                     <p className='nfts-text'>PORTFOLIO</p>
                     <p className='wallet-address'>{walletAddress}</p>
                 </div>
                 <div className="nft-stats-container-1">
-                    <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> NET WORTH: ${(Math.round(data.balance * ethPrice * 100) / 100) + (Math.round(totalNftValue * ethPrice * 100) / 100)}</div>
+                    <div className='stat-box'><BsFillBriefcaseFill className='stat-image'/> NET WORTH: ${(Math.round(Math.round(data.balance * ethPrice * 100) / 100) + (Math.round(totalNftValue * ethPrice * 100) / 100))}</div>
                     <div className='stat-box'><FaCoins className='stat-image'/> TOKENS: ${Math.round(data.balance * ethPrice * 100) / 100}</div>
                     <div className='stat-box'><IoIosPhotos className='stat-image'/> NFTS: ${Math.round(totalNftValue * ethPrice * 100) / 100} </div>
                 </div>

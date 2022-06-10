@@ -78,6 +78,47 @@ body {
     cursor: pointer;
 }
 
+.nav-text {
+    text-decoration: none;
+    color: black;
+    font-family: 'MSBee-Bold';
+    font-style: italic;
+    font-size: 35px;
+}
+
+.eth-navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.navbar-contents {
+    display: flex;
+    justify-content: end;
+}
+
+.nav-icon-container {
+    background-color: #E5E5E5;
+    border-radius: 6px;
+    margin-left: 12px;
+    border: 2px solid #cecece;
+}
+
+.nav-icon {
+    height: 20px;
+    width: 20px;
+    padding: 6px;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: rgb(56, 56, 56)
+}
+
+.nav-icon:hover {
+    background-color: white;
+    border-radius: 6px;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -189,7 +230,7 @@ body {
 }
 
 .nfts-text {
-    font-size: 30px;
+    font-size: 28px;
     font-family: 'MSBee-Black';
     margin-top: auto;
     margin-bottom: auto;
@@ -198,7 +239,7 @@ body {
 .wallet-address {
     color: #ABABAB;
     padding-left: 20px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'MSBee-Bold';
     margin-top: auto;
     margin-bottom: auto;
@@ -296,7 +337,6 @@ body {
 }
 
 /* Responsiveness */
-
 @media (max-width: 914px) {
     .header-text {
         display: flex;

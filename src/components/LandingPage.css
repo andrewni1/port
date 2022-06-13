@@ -2,12 +2,8 @@ body {
     text-align: center;
 }
 
-.slide-one-container {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
+.page-container {
     position: absolute;
-    width: 50%;
     top: 50%;
     left: 50%;
     -ms-transform: translateX(-50%) translateY(-50%);
@@ -15,44 +11,43 @@ body {
     transform: translate(-50%,-50%);
 }
 
-.text-container {
-    width: 65%;
-    text-align: start;
+.header-container {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2.5px solid black;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .header {
-    font-size: 60px;
+    font-size: 64px;
     font-family: 'MSBee-Bold';
 }
 
+.logo {
+    margin-right: 20px;
+    font-size: 80px;
+}
+
 .sub-header {
-    font-size: 50px;
+    font-size: 28px;
     font-family: 'MSBee-Regular';
     font-style: bold;
-    line-height: 90%;
-    margin-bottom: 2px;
+    margin-top: 12px;
 }
 
-.description {
-    font-size: 18px;
+.button-container {
     font-family: 'MSBee-Regular';
-    width: 70%;
-}
-
-.button {
-    font-family: 'MSBee-Regular';
-    margin-top: 20px;
+    margin-top: 32px;
     font-size: 14px;
 }
 
-.eth {
+.button {
     text-decoration: none;
     color: black;
     background-color: #E5E5E5;
     padding: 16px;
     border-radius: 24px;
-    display: flex;
-    align-items: center;
     width: fit-content;
 }
 
@@ -61,10 +56,6 @@ body {
     transition: 0.3s;
 }
 
-.port-img {
-    width: 35%;
-    height: 35%;
-}
 
 @font-face {
     font-family: 'MSBee-Bold';

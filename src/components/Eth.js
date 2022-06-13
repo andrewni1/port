@@ -5,6 +5,7 @@ import { BsFillBriefcaseFill, BsFillCollectionFill } from "react-icons/bs";
 import { IoIosPhotos } from "react-icons/io";
 import { FaCoins, FaEthereum, FaSearch, FaSignOutAlt } from "react-icons/fa";
 import { GiToken } from "react-icons/gi";
+import { IoPlanet } from "react-icons/io5";
 import metamask from './metamask.png'
 import nftPlaceholder from './nft-placeholder.jpg'
 import os from './os.png'
@@ -128,7 +129,12 @@ function Eth() {
     } else return (
         <div>
             <div className='eth-navbar'>
-                <div><a href='./' className='nav-text'>Port</a></div>
+                <a href='./' className='logo-nav'>
+                    <div className='logo-container'>
+                        <div><IoPlanet className='logo-icon'/></div>
+                        <div className='nav-text'>Port</div>
+                    </div>
+                </a>
                 <div className='navbar-contents'>
                     <div className='nav-icon-container'><a href={OSLink} target='_blank' rel="noreferrer"><img src={os} alt='opensea' className='nav-icon'/></a></div>
                     <div className='nav-icon-container'><a href='/eth'><FaSignOutAlt className='nav-icon'/></a></div>

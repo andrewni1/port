@@ -79,8 +79,6 @@ body {
 }
 
 .nav-text {
-    text-decoration: none;
-    color: black;
     font-family: 'MSBee-Bold';
     font-style: italic;
     font-size: 35px;
@@ -90,6 +88,20 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+}
+
+.logo-nav {
+    text-decoration: none;
+    color: black;
+}
+
+.logo-container {
+    display: flex;
+}
+
+.logo-icon {
+    font-size: 44px;
+    margin-right: 8px;
 }
 
 .navbar-contents {
@@ -108,7 +120,7 @@ body {
     height: 20px;
     width: 20px;
     padding: 6px;
-    margin-top: 4px;
+    margin-top: 6px;
     margin-left: 4px;
     margin-right: 4px;
     color: rgb(56, 56, 56)

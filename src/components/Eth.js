@@ -70,7 +70,7 @@ function Eth() {
 
     const options = {
         method: 'GET',
-        headers: {Accept: 'application/json', 'X-API-KEY': 'd164f34100f24f3bab3cc79302606609'}
+        headers: {Accept: 'application/json', 'X-API-KEY': process.env.REACT_APP_OS_API_KEY}
     };
 
     const nftFilterAssets = () => {
